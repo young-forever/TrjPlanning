@@ -12,7 +12,7 @@ CirMsg CalCirFrom3P(Vector3d Ps, Vector3d Pc, Vector3d Pe)
 	r1.normalize();
 	r2.normalize();
 
-	if (fabs(r1(0)) == fabs(r2(0)) && fabs(r1(1)) == fabs(r2(1)) && fabs(r1(2)) == fabs(r2(2)))//判断三点是否共线
+	if (fabs(r1(0)) == fabs(r2(0)) && fabs(r1(1)) == fabs(r2(1)) && fabs(r1(2)) == fabs(r2(2)))//脜脨露脧脠媒碌茫脢脟路帽鹿虏脧脽
 	{
 		re_cirmsg.err_msg = -1;
 		return re_cirmsg;
@@ -40,9 +40,9 @@ CirMsg CalCirFrom3P(Vector3d Ps, Vector3d Pc, Vector3d Pe)
 	A(2, 2) = 2 * z3 - 2 * z1;
 
 	Vector3d B;
-	B(0) = x1*y2*z3 - x1*y3*z2 - x2*y1*z3 + x2*y3*z1 + x3*y1*z2 - x3*y2*z1;
-	B(1) = x1*x1 - x2*x2 + y1*y1 - y2*y2 + z1*z1 - z2*z2;
-	B(2) = x1*x1 - x3*x3 + y1*y1 - y3*y3 + z1*z1 - z3*z3;
+	B(0) = -(x1*y2*z3 - x1*y3*z2 - x2*y1*z3 + x2*y3*z1 + x3*y1*z2 - x3*y2*z1);
+	B(1) = -(x1*x1 - x2*x2 + y1*y1 - y2*y2 + z1*z1 - z2*z2);
+	B(2) = -(x1*x1 - x3*x3 + y1*y1 - y3*y3 + z1*z1 - z3*z3);
 
 	Vector3d Po_v = A.inverse()*B;
 
